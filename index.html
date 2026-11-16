@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sher Badshah</title>
-<meta name="description" content="Sher Badshah, PhD candidate in Computer Science at Dalhousie University. Research on reliable LLM evaluation, uncertainty, and conformal prediction.">
+<meta name="description" content="Sher Badshah, PhD candidate in Computer Science at Dalhousie University. Research on LLM reliability, uncertainty quantification, weight-space programming, and post-training.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,8 +42,9 @@
   </div>
 
   <h2 id="welcome">Welcome</h2>
-  <p>I am a PhD candidate at Dalhousie University, working in the HyperMatrix Lab with Prof. Hassan Sajjad. My research asks when we can trust large language models as judges. Automatic evaluation now drives model development, yet LLM judges can be biased, inconsistent, and confidently wrong. I build methods that make their verdicts more reliable: aggregating multiple judges, grounding verdicts in retrieved evidence, and escalating hard cases only when needed.</p>
-  <p>A second line of my work gives these judges formal guarantees. Using uncertainty estimation and conformal risk control, a judge can abstain or retrieve more evidence when it is unsure, while keeping the error rate on the verdicts it does return below a level the user chooses. My thesis, <em>Improving the Reliability of Large Language Models as Judges</em>, brings these pieces together. Before NLP, I worked on empirical software engineering, with papers on DevOps, software processes, and AI ethics.</p>
+  <p>I am a PhD candidate in Computer Science at Dalhousie University, where I work in the HyperMatrix Lab with Prof. Hassan Sajjad. My research is about making large language models reliable. A model that is right most of the time is still hard to deploy if we cannot tell when it is wrong. I study how to measure what a model does not know and how to act on that signal.</p>
+  <p>Much of my work is in uncertainty quantification. I develop uncertainty estimates for LLM outputs and combine them with conformal prediction, so a system can answer, seek more evidence, or abstain while keeping its error rate below a level the user sets. I have applied these ideas to LLM evaluation, where they come with formal guarantees on the decisions a model accepts.</p>
+  <p>I am now extending this work in two directions. The first is weight-space programming, which treats a network's weights as something that can be read, edited, and transferred directly, for example moving a learned skill from one model into another. The second is reinforcement learning and post-training, where I am interested in how training signals shape reliability and calibration. Before NLP, I worked on empirical software engineering, with papers on DevOps, software processes, and AI ethics.</p>
 
   <h2 id="news">Recent Publications, Talks &amp; News</h2>
   <ul class="news">
@@ -51,7 +52,7 @@
     <li><span class="year-entry">2026</span><a href="papers/index.html#scope">SCOPE: Selective Conformal Optimized Pairwise LLM Judging</a> - accepted at ICML 2026, Seoul. Certified error control for pairwise LLM judges.</li>
     <li><span class="year-entry">2026</span><a href="https://openreview.net/forum?id=PWv1RIS6QK">Judge, Retrieve, or Abstain</a> - accepted at COLM 2026. Judges that retrieve or abstain with provable risk guarantees.</li>
     <li><span class="year-entry">2026</span><a href="papers/index.html#sage">SAGE: A Search-Augmented Evaluation of LLMs on Free-Form QA</a> - accepted at ACL 2026 (main conference).</li>
-    <li><span class="year-entry">2026</span>Invited talk at a workshop in Korea on reliable LLM judging (SAGE, SCOPE, and Judge-Retrieve-Abstain).</li>
+    <li><span class="year-entry">July 2026</span>Invited talk, <em>Uncertainty-Guided LLM Judging</em>, at a workshop in Seoul, Korea, held alongside ICML 2026.</li>
     <li><span class="year-entry">2025</span><a href="papers/index.html#clev">CLEV: Lightweight Efficient Voting for Free-Form QA</a> - Findings of IJCNLP-AACL 2025.</li>
     <li><span class="year-entry">2025</span><a href="papers/index.html#rgv">Reference-Guided Verdict: LLMs-as-Judges in Automatic Evaluation of Free-Form Text</a> - Widening NLP Workshop 2025.</li>
     <li><span class="year-entry">September 2025</span>Started as Research Assistant with Dr. Deena Abul-Fottouh, Department of Sociology and Social Anthropology, Dalhousie.</li>
