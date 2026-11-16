@@ -15,7 +15,7 @@ HEAD = '''<!doctype html>
     <li><a {a_about}href="../about/index.html">About</a></li>
     <li><a {a_papers}href="../papers/index.html">Papers</a></li>
     <li><a {a_teaching}href="../teaching/index.html">Teaching</a></li>
-    <li><a href="../files/sher_badshah_cv.pdf">CV</a></li>
+    <li><a href="../files/sher_badshah_cv.pdf" target="_blank" rel="noopener">CV</a></li>
   </ul>
 </div></nav>
 <div class="page">
