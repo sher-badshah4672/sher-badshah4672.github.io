@@ -29,28 +29,29 @@ def parse(page):
 
 
 def render(stats, series):
-    since = series[0][0]
-    w, h, gap, top, base = 280, 150, 6, 20, 22
+    w, h, gap, top, base = 230, 112, 8, 16, 18
     n = len(series)
     bw = (w - gap * (n - 1)) / n
     peak = max(c for _, c in series) or 1
-    bars = []
+    axis = h - base
+    bars = [f'<line x1="0" y1="{axis}" x2="{w}" y2="{axis}" class="axis"/>']
     for i, (y, c) in enumerate(series):
         x = i * (bw + gap)
-        bh = (h - top - base) * c / peak
-        yy = h - base - bh
+        bh = max((axis - top) * c / peak, 1)
+        yy = axis - bh
+        cx = x + bw / 2
         bars.append(
-            f'<rect x="{x:.1f}" y="{yy:.1f}" width="{bw:.1f}" height="{bh:.1f}" class="bar"><title>{y}: {c}</title></rect>'
-            f'<text x="{x + bw / 2:.1f}" y="{yy - 4:.1f}" class="val">{c}</text>'
-            f'<text x="{x + bw / 2:.1f}" y="{h - 4}" class="yr">{y}</text>')
-    rows = [("Citations", stats[0], stats[1]), ("h-index", stats[2], stats[3]), ("i10-index", stats[4], stats[5])]
-    trs = "".join(f"<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>" for a, b, c in rows)
-    today = datetime.date.today().strftime("%B %Y")
+            f'<rect x="{x:.1f}" y="{yy:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="2" class="bar"><title>{y}: {c} citations</title></rect>'
+            f'<text x="{cx:.1f}" y="{yy - 4:.1f}" class="val">{c}</text>'
+            f'<text x="{cx:.1f}" y="{h - 3}" class="yr">\'{str(y)[2:]}</text>')
+    tiles = "".join(f'<div><span class="num">{v}</span><span class="lbl">{k}</span></div>'
+                    for k, v in [("Citations", stats[0]), ("h-index", stats[2]), ("i10-index", stats[4])])
+    today = datetime.date.today().strftime("%b %Y")
     return f'''{START}
     <div class="scholar">
-      <table><thead><tr><th></th><th>All</th><th>Since {since}</th></tr></thead><tbody>{trs}</tbody></table>
+      <div class="tiles">{tiles}</div>
       <svg viewBox="0 0 {w} {h}" role="img" aria-label="Citations per year">{"".join(bars)}</svg>
-      <p class="scholar-note">Source: <a href="{html.escape(PROFILE)}" target="_blank" rel="noopener">Google Scholar</a>, updated {today}.</p>
+      <p class="scholar-note"><a href="{html.escape(PROFILE)}" target="_blank" rel="noopener">Google Scholar</a> · {today}</p>
     </div>
     {END}'''
 
