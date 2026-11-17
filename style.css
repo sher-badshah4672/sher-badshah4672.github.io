@@ -122,4 +122,6 @@ footer { color: var(--muted); font-size: .9rem; text-align: center; padding: 16p
 .columns .column:last-child .links { margin-top: auto; margin-bottom: 0; padding-top: 14px; }
 .columns .column:first-child .scholar-note { line-height: 1.5; }
 
-.columns .column:last-child .interests { margin: 0; }
+.columns .column:last-child .interests { margin: 0; padding-left: 1.2rem; }
+.interests li { margin: 0; }
+.interests li::marker { color: var(--muted); }
