@@ -30,7 +30,7 @@ def parse(page):
 
 def render(stats, series):
     since = series[0][0]
-    w, h, gap, top, base = 280, 130, 6, 16, 18
+    w, h, gap, top, base = 280, 150, 6, 20, 22
     n = len(series)
     bw = (w - gap * (n - 1)) / n
     peak = max(c for _, c in series) or 1

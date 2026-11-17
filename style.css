@@ -96,12 +96,13 @@ footer { color: var(--muted); font-size: .9rem; text-align: center; padding: 16p
   .column { width: 100% !important; padding: 0; }
   .column:first-child { margin-bottom: 1.5rem; }
   .column img { max-width: 200px; }
+  .scholar { max-width: 300px; }
   dl.cv { grid-template-columns: 1fr; gap: 0; }
   dl.cv dd { margin-bottom: 8px; }
 }
 
 /* Google Scholar citation summary */
-.scholar { max-width: 300px; margin-top: 4px; }
+.scholar { max-width: 230px; margin-top: 24px; }
 .scholar table { width: 100%; border-collapse: collapse; font-size: .9rem; margin-bottom: 10px; }
 .scholar th { font-weight: 400; color: var(--muted); text-align: right; padding: 3px 0; border-bottom: 1px solid var(--rule); }
 .scholar td { text-align: right; padding: 3px 0; border-bottom: 1px solid var(--rule); }
@@ -109,5 +110,5 @@ footer { color: var(--muted); font-size: .9rem; text-align: center; padding: 16p
 .scholar svg { width: 100%; height: auto; display: block; }
 .scholar .bar { fill: #9aa0a6; }
 .scholar .bar:hover { fill: #6c757d; }
-.scholar .val, .scholar .yr { font-family: 'Lora', serif; font-size: 10px; text-anchor: middle; fill: var(--muted); }
+.scholar .val, .scholar .yr { font-family: 'Lora', serif; font-size: 13px; text-anchor: middle; fill: var(--muted); }
 .scholar-note { font-size: .78rem; color: var(--muted); margin: 6px 0 0 !important; }
