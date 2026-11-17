@@ -6,7 +6,7 @@ HEAD = '''<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} | Sher Badshah</title>
 <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=202611162253">
 </head>
 <body>
 <nav class="navbar"><div class="inner">
